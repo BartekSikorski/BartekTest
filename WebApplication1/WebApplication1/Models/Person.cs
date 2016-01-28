@@ -16,7 +16,7 @@ namespace WebApplication1.Models
         public string Surname { get; set; }
         public DateTime Birthdate { get; set; }
 
-        public ICollection<Address> Addresses { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
 
 
     }
