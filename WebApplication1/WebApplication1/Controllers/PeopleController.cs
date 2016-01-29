@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
         // GET: People
         public ActionResult Index()
         {
+            ///testowy komentarz
             return View(db.People.ToList());
         }
 
