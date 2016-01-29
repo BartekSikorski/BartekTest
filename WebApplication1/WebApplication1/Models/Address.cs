@@ -11,6 +11,7 @@
         public AddressType Type { get; set; }
 
         public Person Person { get; set; }
+        public string City { get; internal set; }
     }
 
     public enum AddressType
