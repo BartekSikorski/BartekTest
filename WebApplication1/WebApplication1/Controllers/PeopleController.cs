@@ -23,11 +23,8 @@ namespace WebApplication1.Controllers
         // GET: People
         public ActionResult Index()
         {
-            var ddd = db.People.ToList();
-
-            
-            return View(ddd);
-
+            ///testowy komentarz
+            return View(db.People.ToList());
         }
 
         // GET: People/Details/5
