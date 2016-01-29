@@ -11,11 +11,19 @@ namespace WebApplication1.App_Start
     {
         public static void RegisterMaps()
         {
-            Mapper.Initialize(cfg =>
+
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new PersonProfile());
-            }
-            );
+            });
+
+            var mapper = config.CreateMapper();
+
+            //Mapper.Initialize(cfg =>
+            //{
+            //    cfg.AddProfile(new PersonProfile());
+            //}
+            //);
 
         }
 

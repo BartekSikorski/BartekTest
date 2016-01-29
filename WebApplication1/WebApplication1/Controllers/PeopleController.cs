@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -13,11 +14,20 @@ namespace WebApplication1.Controllers
     public class PeopleController : Controller
     {
         private WebAppContext db = new WebAppContext();
+        private IMapper mapper;
 
+        public PeopleController(IMapper mapper)
+        {
+            this.mapper = mapper;
+        }
         // GET: People
         public ActionResult Index()
         {
-            return View(db.People.ToList());
+            var ddd = db.People.ToList();
+
+            
+            return View(ddd);
+
         }
 
         // GET: People/Details/5
