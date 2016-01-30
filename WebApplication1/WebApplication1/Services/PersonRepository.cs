@@ -5,6 +5,7 @@ using System.Web;
 using WebApplication1.Models;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Services
 {
@@ -16,27 +17,14 @@ namespace WebApplication1.Services
         {
             db = new WebAppContext();
 
-    }
-    public IEnumerable<PersonVM> getAllPeople()
+        }
+        public IEnumerable<Person> getAllPeople()
         {
-          
 
-            return db.People.Select(p => new PersonVM
-            {
-                Firstname = p.FirsName,
-                Surname = p.Surname,
-                Birthdate = p.Birthdate,
-                Addresses = p.Addresses.Select(a => new AddressVM
-                {
-                    City = a.City,
-                    HouseNo = a.HouseNo,
-                    FlatNo = a.FlatNo,
-                    Street = a.Street,
-                    ZipCode = a.ZipCode
 
-                }).ToList()
-            });
-  
+            return db.People.ToList();
+
+
         }
 
         public PersonVM getPersonById(int PersonID)
