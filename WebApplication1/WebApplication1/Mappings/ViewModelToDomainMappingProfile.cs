@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace SocialGoal.Mappings
 {

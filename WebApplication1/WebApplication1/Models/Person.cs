@@ -12,7 +12,7 @@ namespace WebApplication1.Models
             Addresses = new HashSet<Address>();
         }
         public int Id { get; set; }
-        public string FirsName { get; set; }
+        public string FirstName { get; set; }
         public string Surname { get; set; }
         public DateTime Birthdate { get; set; }
 

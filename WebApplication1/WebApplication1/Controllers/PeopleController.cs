@@ -8,17 +8,25 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
     public class PeopleController : Controller
     {
         private WebAppContext db = new WebAppContext();
-        private IMapper mapper;
+        //private IMapper mapper;
 
-        public PeopleController(IMapper mapper)
+        //public PeopleController(IMapper mapper)
+        //{
+        //    this.mapper = mapper;
+        //}
+
+        public ActionResult Index2()
         {
-            this.mapper = mapper;
+
+           var view = Mapper.Map<IEnumerable<Person>, IEnumerable<PersonVM>>(db.People.ToList());
+            return View(view);
         }
         // GET: People
         public ActionResult Index()
