@@ -20,16 +20,13 @@ namespace WebApplication1.Services
         }
         public IEnumerable<Person> getAllPeople()
         {
-
-
             return db.People.ToList();
-
-
         }
 
-        public PersonVM getPersonById(int PersonID)
+        public Person getPersonById(int PersonID)
         {
-            throw new NotImplementedException();
+            var person = db.People.Find(PersonID);
+            return person;
         }
     }
 }

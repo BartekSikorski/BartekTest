@@ -11,7 +11,7 @@ namespace WebApplication1.Services
     interface IPersonRepository
     {
         IEnumerable<Person> getAllPeople();
-        PersonVM getPersonById(int PersonID);
+        Person getPersonById(int PersonID);
 
 
 
